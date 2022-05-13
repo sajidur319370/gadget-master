@@ -1,0 +1,185 @@
+[
+    {
+        "id": "1",
+        "category": "laptop",
+        "img": "https://i.ibb.co/LzPGTZp/Dell-Inspiron-15-3511-Core-i5-11th-Gen-512-GB-SSD-MX350-2-GB-Graphics-15-6-FHD-Laptop.jpg",
+        "name": "Dell Inspiron 15 3511 Core i5 11th Gen 512GB SSD MX350 2GB Graphics 15.6-inch FHD Laptop",
+        "price": "320",
+        "description": "Intel Core i3-1115G4 Processor (6M Cache, 3.00 GHz up to 4.10 GHz) 4GB DDR4 3200MHz RAM 1TB 5400 rpm 2.5 SATA Hard Drive 15.6-inch FHD (1920 x 1080) Display",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "2",
+        "category": "laptop",
+        "img": "https://i.ibb.co/SVv8GJr/Asus-TUF-Gaming-F15-FX506-LH-Core-i5-GTX-1650-4-GB-Graphics-15-6-FHD-Gaming-Laptop.jpg",
+        "name": "Asus TUF Gaming F15 FX506 LH Core i5 GTX-1650 4GB Graphics 15.6-inch FHD Gaming Laptop",
+        "price": "350",
+        "description": "Intel Core i5-10300H Processor (8M Cache, 2.50GHz up to 4.50 GHz) 8GB DDR4 RAM + 512GB SSD GTX 1650 4GB GDDR6 Graphics 15.6-inch FHD (1920x1080)Display",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "3",
+        "category": "laptop",
+        "img": "https://i.ibb.co/59XgkHs/HP-240-G8-Corei5-11th-Gen-14-FHD-Laptop.jpg",
+        "name": "HP 240 G8 Corei5 11th Gen 14-inch FHD Laptop",
+        "price": "120",
+        "description": "Processor: Intel Core i5-1135G7 (8M Cache, 2.40 GHz up to 4.20 GHz) Memory: 8GB DDR4 RAM Storage: 1TB SATA HDD Display: 14-inch FHD (1920 x 1080)",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "4",
+        "category": "laptop",
+        "img": "https://i.ibb.co/k8mQbCR/Lenovo-Idea-Pad-Gaming-3i-Core-i5-10th-Gen-GTX1650-4-GB-Graphics-15-6-FHD-Laptop.jpg",
+        "name": "Lenovo Idea Pad Gaming 3i Core i5 10th Gen GTX1650 4GB Graphics 15.6-inch FHD Laptop",
+        "price": "89",
+        "description": "Intel Core i5-10300H Processor (8M Cache, 2.50 GHz up to 4.50 GHz) 8GB DDR4 2933MHz RAM 1TB HDD+ 256GB NVME SSD NVIDIA GTX 1650 4GB Graphics",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "5",
+        "category": "laptop",
+        "img": "https://i.ibb.co/jVJNTP6/Samsung-Galaxy-Book-Pro-360-Core-i7-11th-Gen-2-in-1-1-TB-SSD-15-6-FHD-Touch-Laptop.jpg",
+        "name": "Samsung Galaxy Book Pro 360 Core i7 11th Gen 2-in-1 1TB SSD 15.6-inch FHD Touch Laptop",
+        "price": "99",
+        "description": "Intel Core i7-1165G7 Processor (12M Cache, 2.80 GHz up to 4.70 GHz) 16GB RAM + 1TB SSD 15.6” FHD Super AMOLED touch display",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "6",
+        "category": "laptop",
+        "img": "https://i.ibb.co/1sL1T3K/Walton-Passion-BP5800-Core-i5-8th-Gen-15-6-HD-Laptop.jpg",
+        "name": "Walton Passion BP5800 Core i5 8th Gen 15.6-inch HD Laptop",
+        "price": "129",
+        "description": "Intel Core i5-8250U Processor (6MB Cache, 1.60GHz up to 3.40 GHz) 8GB DDR4 2400MHz RAM 1TB 5400rpm HDD 15.6 HD Display",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "7",
+        "category": "camera",
+        "img": "https://i.ibb.co/QCBFhR7/CANON-EOS-800-D-24-2-MP-WITH-18-55-MM-IS-STM-LENS-FULL-HD-WI-FI-TOUCHSCREEN-DSLR-CAMERA.jpg",
+        "name": "CANON  EOS 800D 24.2MP WITH 18.55MM IS STM LENS FULL HD WI-FI TOUCHSCREEN DSLR CAMERA",
+        "price": "129",
+        "description": "24.2MP APS-C CMOS Sensor DIGIC 7 Image Processor ISO 51200, Full HD 1080p 6 fps Shooting continues shooting",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "8",
+        "category": "camera",
+        "img": "https://i.ibb.co/chHqcTT/CANON-EOS-200-D-II-24-1-MP-WITH-18-55-MM-IS-STM-LENS-FULL-HD-WI-FI-DSLR-CAMERA.jpg",
+        "name":"CANON EOS 200D II 24.1MP WITH 18.55MM IS STM LENS FULL HD WI-FI DSLR CAMERA",
+        "price": "199",
+        "description": "Dual Pixel CMOS AF 24.1MP APS-C CMOS Sensor 3,975 selectable focus positions Creative Assist, Creative Filters and Smooth Skin",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "9",
+        "category": "camera",
+        "img": "https://i.ibb.co/kxF4NPK/Nikon-D5600-DSLR-Camera-with-18-140mm-Lens.jpg",
+        "name": "Nikon D5600 DSLR Camera with 18-140mm Lens",
+        "price": "339",
+        "description": "24.2MP DX-Format CMOS Sensor EXPEED 4 Image ProcessorDisplay 3.2-inch Touchscreen FHD 1080p Video Recording at 60 fps",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "10",
+        "category": "camera",
+        "img": "https://i.ibb.co/Ytp0TMN/Panasonic-Lumix-G85-16-MP-4-K-Wi-Fi-Bluetooth-Mirrorless-Camera-With-12-60mm-Lens.jpg",
+        "name": "Panasonic Lumix G85 16MP 4K Wi-Fi Bluetooth Mirrorless Camera With 12-60mm Lens",
+        "price": "799",
+        "description": "6MP Digital Live MOS Sensor & Venus Engine 5-Axis Gyro Sensor Compensation Shutter Shock Reduction Dual I.S. Effective To 5 Stops",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "11",
+        "category": "camera",
+        "img": "https://i.ibb.co/njZxPBT/Sony-Alpha-A7-III-Mirrorless-Digital-Camera-Only-Body.jpg",
+        "name": "Sony Alpha A7 III Mirrorless Digital Camera Only Body",
+        "price": "499",
+        "description": "42MP Full-Frame Exmor R BSI CMOS Sensor 399-Point AF System BIONZ X Image Processor UHD 4K30p Video with HLG",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "12",
+        "category": "camera",
+        "img": "https://i.ibb.co/TK1rgPJ/Sony-Alpha-A6400-Mirrorless-Digital-Camera-with-16-50mm-Lens.jpg",
+        "name": "Sony Alpha A6400 Mirrorless Digital Camera with 16-50mm Lens",
+        "price": "349",
+        "description": "24.2MP APS-C Exmor CMOS Sensor BIONZ X Image Processor Real-Time Eye AF; Real-Time Tracking XGA Tru-Finder 2.36m-Dot OLED EVF",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      },
+      {
+        "id": "13",
+        "category":"router",
+        "img": "https://i.ibb.co/Xk8Gp2k/D-Link-DIR-650-IN-N300-300mbps-Wi-Fi-Router.jpg",
+        "name": "D-Link DIR-650 IN N300 300mbps Wi-Fi Router",
+        "price": "697",
+        "description": "WPA/WPA2 & Firewall(NAT) Security Wireless Interface 4 X 5dBi External Antenna Dimension: 255.9 x 168 x 41.2 mm",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+  
+          },
+      {
+        "id": "14",
+        "category":"router",
+        "img": "https://i.ibb.co/rFcS40D/Netis-W4-300-Mbps-4-Antenna-Router-White.jpg",
+        "name": "Netis W4 300Mbps 4 Antenna Router White",
+        "price": "660",
+        "description": "Data Transfer Rate:Up to 300Mbps MIMO high gain 5dBi x 4 antennas Access Control- IP filtering MAC Filtering Built-in multilingual management page",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+  
+          },
+      {
+        "id": "15",
+        "category":"router",
+        "img": "https://i.ibb.co/wdzGrKc/Tp-link-TL-WR850-N-300-Mbps-Wireless-N-Speed-Router.jpg",
+        "name": "Tp-link TL WR850 N 300Mbps Wireless N-Speed Router",
+        "price": "999",
+        "description": "Signal Rate 300Mbps Antenna 2 Antennas Frequency 2.4-2.4835GHz Button WPS/RESET Button",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+  
+          },
+      {
+        "id": "16",
+        "category":"router",
+        "img": "https://i.ibb.co/YkHjkzb/TP-Link-TL-WR841-N-300-Mbps-Wireless-Router.jpg",
+        "name": "TP-Link TL WR841 N 300Mbps Wireless Router",
+        "price": "559",
+        "description": "Speed: 11n: Up to 300Mbps Frequency: 2.4-2.4835GHz Interface: 1 x WAN & 4 x LAN ports",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+          },
+      {
+        "id": "17",
+        "category":"router",
+        "img": "https://i.ibb.co/6DyS93M/TP-Link-TL-WR940-N-450-Mbps-Wireless-N-Router.jpg",
+        "name": "TP-Link TL WR940 N 450Mbps Wireless N Router",
+        "price": "768",
+        "description": "Signal Rate : 11n Up to 450Mbps Frequency: 2.4-2.4835GHz Interface: 1 x WAN & 4 x LAN ports",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+          },
+      {
+        "id": "18",
+        "category":"router",
+        "img": "https://i.ibb.co/mNFY1jt/Wavlink-WL-WN529-R2-P-N300-Wireless-Smart-Wi-Fi-Router.jpg",
+        "name": "Wavlink WL WN529 R2P N300 Wireless Smart Wi-Fi Router",
+        "price": "499",
+        "description": "Data Rate 300 Mbps 4 External Antennas Frequency 2.4GHz Repeater Access Point",
+        "quantity": 1,
+        "supplier": "Star-Tech"
+      }
+]
