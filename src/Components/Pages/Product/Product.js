@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { name, img, description, price, quantity, supplier } = product;
+  const { _id, name, img, description, price, quantity, supplier } = product;
+  const navigate = useNavigate();
   return (
     <Col
       sm={12}
@@ -24,7 +26,12 @@ const Product = ({ product }) => {
           Supplier: <span className="text-dark">{supplier}</span>
         </p>
       </div>
-      <Button className="position-absolute bottom-0 start-50 translate-middle">
+      <Button
+        onClick={() => {
+          navigate(`/inventory/${_id}`);
+        }}
+        className="position-absolute bottom-0 start-50 translate-middle"
+      >
         Stock Update
       </Button>
     </Col>
