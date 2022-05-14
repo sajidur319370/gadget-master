@@ -6,6 +6,9 @@ const AddItem = () => {
     <div className="w-50 mx-auto my-5">
       <h2 className="text-primary">Add New Item</h2>
       <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control type="Email" placeholder="User Email" />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicImage">
           <Form.Control type="text" placeholder="Product Image URL" />
         </Form.Group>
