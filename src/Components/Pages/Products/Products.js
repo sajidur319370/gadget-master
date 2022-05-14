@@ -5,11 +5,12 @@ import Product from "../Product/Product";
 
 const Products = () => {
   const [products] = useProducts();
+  const SixProducts = products.slice(0, 6);
 
   return (
     <Row>
       <h2 className="text-primary my-5">All Products</h2>
-      {products.map((product) => (
+      {SixProducts.map((product) => (
         <Product key={product._id} product={product}></Product>
       ))}
     </Row>
