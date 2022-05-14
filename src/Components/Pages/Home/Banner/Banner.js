@@ -10,30 +10,30 @@ const Banner = () => {
       <Carousel.Item>
         <img className="d-block w-100" src={image1} alt="First slide" />
         <Carousel.Caption>
-          <h2 className="display-3 text-warning">Stay With New Technology</h2>
-          <p className="fw-800 display-3 text-capitalize text-danger">
+          <h1 className="fs-1 text-warning">Smart Technology</h1>
+          <h6 className="fs-5 text-capitalize text-danger">
             Gadget Master is always with You to rech Your Goal
-          </p>
+          </h6>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={image2} alt="Second slide" />
 
         <Carousel.Caption>
-          <h2 className="display-3 text-warning">Be Stylish</h2>
-          <p className="fw-800 display-3 text-capitalize text-danger">
+          <h1 className="fs-1 text-warning">Be Stylish</h1>
+          <h6 className="fs-5 text-capitalize text-danger">
             Gadget Master is always with You to rech Your Goal
-          </p>
+          </h6>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={image3} alt="Third slide" />
 
         <Carousel.Caption>
-          <h2 className="display-3 text-warning">Stay Connected</h2>
-          <p className="fw-800 display-3 text-capitalize text-danger">
+          <h1 className="fs-1 text-warning">Stay Connected</h1>
+          <h6 className="fs-5 text-capitalize text-danger">
             Gadget Master is always with You to rech Your Goal
-          </p>
+          </h6>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
