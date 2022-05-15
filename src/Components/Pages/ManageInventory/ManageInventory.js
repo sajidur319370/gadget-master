@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import useProducts from "../../../hooks/useProducts";
 
 const ManageInventory = () => {
-  const [products, setProducts] = useProducts();
+  const [products, setProducts] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(6);
+  useEffect(() => {
+    fetch("http://localhost:5000/productCount")
+      .then((res) => res.json())
+      .then((data) => {
+        const count = data.count;
+        const pages = Math.ceil(count / 6);
+        setPageCount(pages);
+      });
+  }, []);
+
+  //===========load 6 items in one page==============
+  useEffect(() => {
+    fetch(`http://localhost:5000/inventory?page=${page}&size=${size}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [page, size]);
+
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete this item?");
     if (proceed) {
@@ -49,19 +68,40 @@ const ManageInventory = () => {
               <p className="h6 text-secondary">
                 Supplier: <span className="text-dark">{product.supplier}</span>
               </p>
-              <div className="position-absolute bottom-0 start-50 translate-middle">
-                <Button
-                  onClick={() => handleDelete(product._id)}
-                  className="m-1"
-                  variant="primary"
-                >
-                  Delete
-                </Button>
-              </div>
+            </div>
+            <div className="position-absolute bottom-0 start-50 translate-middle d-flex">
+              <Button
+                className="me-2"
+                onClick={() => handleDelete(product._id)}
+                variant="primary"
+              >
+                Delete
+              </Button>
+              <Link to={`/cart/${product._id}`}>
+                <Button variant="primary">Add to cart</Button>
+              </Link>
             </div>
           </Col>
         ))}
       </Row>
+      <div className="text-start my-2">
+        {[...Array(pageCount).keys()].map((number) => (
+          <button
+            key={number}
+            onClick={() => setPage(number)}
+            className={
+              page === number
+                ? "btn btn-secondary me-1"
+                : "btn btn-primary me-1"
+            }
+          >
+            {number + 1}
+          </button>
+        ))}
+        <button onClick={() => setPage(page + 1)} className="btn btn-primary">
+          Next
+        </button>
+      </div>
     </Container>
   );
 };

@@ -42,7 +42,7 @@ function App() {
           }
         ></Route>
         <Route path="/additem" element={<AddItem></AddItem>}></Route>
-        <Route path="/useritem" element={<UserItems></UserItems>}></Route>
+        <Route path="/cart/:id" element={<UserItems></UserItems>}></Route>
         <Route path="/myitem" element={<MyItems></MyItems>}></Route>
         <Route path="/loading" element={<Loading></Loading>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
