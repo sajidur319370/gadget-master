@@ -1,29 +1,48 @@
-import React from "react";
-import { Button, Form } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 const Inventory = () => {
   const { id } = useParams();
+
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  }, [id]);
+  const { img, name, description, price, quantity, supplier } = product;
   return (
-    <div className="my-5">
+    <Container className="my-5">
       <h2 className="text-primary">Inventory</h2>
-      <h2>Product:{id}</h2>
-      <div className="w-50 mx-auto border border-3 my-5">
-        <div className="d-flex">
-          <h2>Image:</h2>
-          <div>
-            <h6>Name</h6>
-            <h6>description</h6>
-            <h6>price</h6>
-            <h6>Quantity</h6>
-            <h6>supplier Name</h6>
-          </div>
-        </div>
-        <Button variant="primary" className="m-2">
-          Delevered
-        </Button>
-      </div>
-      <Form className="border border-3 w-25 mx-auto my-5 p-2">
+      <Row className="my-5 border border-3">
+        <Col sm={12} md={6} lg={6}>
+          <img src={img} alt="" className="img-fluid" />
+        </Col>
+        <Col sm={12} md={6} lg={6} className="text-start">
+          <h4>{name}</h4>
+          <p className="text-secondary">{description}</p>
+          <h6 className="text-secondary">
+            price:
+            <span className="text-dark">{price}</span>
+          </h6>
+          <h6 className="text-secondary">
+            Quantity:
+            <span className="text-dark">{quantity}</span>
+          </h6>
+          <h6 className="text-secondary">
+            Supplier:
+            <span className="text-dark">{supplier}</span>
+          </h6>
+        </Col>
+      </Row>
+
+      <Button variant="primary" className="m-2">
+        Delevered
+      </Button>
+
+      <Form className="border border-3 w-50 mx-auto my-5 p-2">
         <Form.Group className="text-white" controlId="formBasicNumber">
           <Form.Control type="number" placeholder="Increase Quantity" />
         </Form.Group>
@@ -38,7 +57,7 @@ const Inventory = () => {
       >
         Manage Inventories
       </Link>
-    </div>
+    </Container>
   );
 };
 
