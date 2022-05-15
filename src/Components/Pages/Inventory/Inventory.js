@@ -12,7 +12,7 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
-  const { img, name, description, price, quantity, supplier } = product;
+  const { img, name, description, price, quantity, supplier, status } = product;
   return (
     <Container className="my-5">
       <h2 className="text-primary">Inventory</h2>
@@ -34,6 +34,10 @@ const Inventory = () => {
           <h6 className="text-secondary">
             Supplier:
             <span className="text-dark">{supplier}</span>
+          </h6>
+          <h6 className="text-secondary">
+            Status:
+            <span className="text-dark">{status}</span>
           </h6>
         </Col>
       </Row>

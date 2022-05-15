@@ -12,6 +12,7 @@ import Footer from "./Components/Pages/Shared/Footer/Footer";
 import Header from "./Components/Pages/Shared/Header/Header";
 import Loading from "./Components/Pages/Shared/Loading/Loading";
 import NotFound from "./Components/Pages/Shared/NotFound/NotFound";
+import UserItems from "./Components/Pages/UserItems/UserItems";
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           }
         ></Route>
         <Route path="/additem" element={<AddItem></AddItem>}></Route>
+        <Route path="/useritem" element={<UserItems></UserItems>}></Route>
         <Route path="/myitem" element={<MyItems></MyItems>}></Route>
         <Route path="/loading" element={<Loading></Loading>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

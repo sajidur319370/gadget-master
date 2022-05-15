@@ -27,19 +27,14 @@ const Product = ({ product }) => {
         </p>
       </div>
       <div className="position-absolute bottom-0 start-50 translate-middle">
-        <div className="d-flex justify-content-between">
-          <Button
-            className="m-1"
-            onClick={() => {
-              navigate(`/inventory/${_id}`);
-            }}
-          >
-            Update
-          </Button>
-          <Button className="m-1" variant="primary">
-            Delete
-          </Button>
-        </div>
+        <Button
+          className="m-1"
+          onClick={() => {
+            navigate(`/inventory/${_id}`);
+          }}
+        >
+          Update
+        </Button>
       </div>
     </Col>
   );
