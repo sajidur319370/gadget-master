@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
@@ -16,12 +17,17 @@ const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/login", {
+      email,
+    });
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,7 +37,7 @@ const Login = () => {
   if (user) {
     emailRef.current.value = "";
     passwordRef.current.value = "";
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
     console.log(user);
   }
 

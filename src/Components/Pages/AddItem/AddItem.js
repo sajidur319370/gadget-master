@@ -27,7 +27,7 @@ const AddItem = () => {
         <input
           className="mb-2"
           placeholder="Product Category"
-          {...register("category", { required: true, maxLength: 20 })}
+          {...register("category")}
         />
         <br />
         <input className="mb-2" placeholder="Image URL" {...register("img")} />
@@ -35,7 +35,7 @@ const AddItem = () => {
         <input
           className="mb-2"
           placeholder="Product Name"
-          {...register("name", { required: true, maxLength: 20 })}
+          {...register("name")}
         />
         <br />
         <input
@@ -61,14 +61,10 @@ const AddItem = () => {
         <input
           className="mb-2"
           placeholder="Supplier Name"
-          {...register("supplier", { required: true, maxLength: 20 })}
+          {...register("supplier")}
         />
         <br />
-        <input
-          className="mb-2"
-          placeholder="Status"
-          {...register("status", { required: true, maxLength: 20 })}
-        />
+        <input className="mb-2" placeholder="Status" {...register("status")} />
         <br />
         <input type="submit" value="Add" className="btn btn-success" />
       </form>
