@@ -14,9 +14,13 @@ const UserItems = () => {
   const handlePlaceOrder = (event) => {
     event.preventDefault();
     const userItems = {
-      product: product.name,
+      name: name,
+      img: img,
+      description: description,
+      price: price,
+      quantity: quantity,
       email: user.email,
-      name: user.displayName,
+      userName: user.displayName,
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
@@ -59,17 +63,6 @@ const UserItems = () => {
         </Col>
       </Row>
       <form onSubmit={handlePlaceOrder} className="my-5">
-        <input
-          type="text"
-          className="mb-2"
-          name="serviceName"
-          value={product.name}
-          placeholder="Service Name"
-          required
-          readOnly
-          disabled
-        />
-        <br />
         <input
           type="email"
           className="mb-2"

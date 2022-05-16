@@ -32,7 +32,7 @@ const ManageInventory = () => {
       fetch(url, {
         method: "DELETE",
       })
-        .then((res) => res.json)
+        .then((res) => res.json())
         .then((data) => {
           console.log(data);
           const remaining = products.filter((product) => product._id !== id);
