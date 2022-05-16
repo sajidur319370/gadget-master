@@ -1,13 +1,58 @@
-import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import React from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import useProductDetails from "../../../hooks/useProductDetails";
 
 const Inventory = () => {
   const { id } = useParams();
   const [product] = useProductDetails(id);
-
   const { img, name, description, price, quantity, supplier, status } = product;
+
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const updateQuantity = event.target.updateQuantity.value;
+    const updateProduct = { updateQuantity };
+
+    // send data to server
+    const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateProduct),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        alert("Successfully Updated!");
+        event.target.reset();
+        console.log(product);
+      });
+    window.location.reload();
+  };
+
+  const handleDeliverUpdate = (quantity) => {
+    const updateQuantity = quantity - 1;
+    const updateProduct = { updateQuantity };
+
+    // send data to server
+    const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateProduct),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        alert("Successfully Delevered!");
+        console.log(product);
+      });
+    window.location.reload();
+  };
 
   return (
     <Container className="my-5">
@@ -38,22 +83,31 @@ const Inventory = () => {
         </Col>
       </Row>
 
-      <Button variant="danger" className="m-2">
+      <Button
+        onClick={() => handleDeliverUpdate(quantity)}
+        variant="danger"
+        className="my-5"
+      >
         Delevered
       </Button>
 
-      <Form className="border border-3 w-50 mx-auto my-5 p-2">
-        <Form.Group className="text-white" controlId="formBasicNumber">
-          <Form.Control type="number" placeholder="Increase Quantity" />
-        </Form.Group>
+      <form onSubmit={handleUpdate}>
+        <input
+          className="mb-2"
+          name="updateQuantity"
+          placeholder="Update Quantity"
+          type="number"
+        />
         <br />
-        <Button variant="success" type="submit">
-          Restock The Item
-        </Button>
-      </Form>
+        <input
+          type="submit"
+          value="Restock The Items"
+          className="btn btn-success"
+        />
+      </form>
       <Link
         to="/inventory"
-        className="text-decoration-none my-5 btn btn-success"
+        className="text-decoration-none my-5 btn btn-secondary"
       >
         Manage Inventories
       </Link>

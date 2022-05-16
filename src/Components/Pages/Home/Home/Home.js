@@ -14,7 +14,7 @@ const Home = () => {
         <Products></Products>
         <Link
           to="/inventory"
-          className="text-decoration-none my-5 btn btn-success"
+          className="text-decoration-none my-5 btn btn-secondary"
         >
           Manage Inventories
         </Link>
