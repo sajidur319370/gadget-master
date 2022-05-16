@@ -1,12 +1,34 @@
+import axios from "axios";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import auth from "../../../firebase.init";
 import useProductDetails from "../../../hooks/useProductDetails";
 
 const UserItems = () => {
+  const [user] = useAuthState(auth);
   const { id } = useParams();
   const [product] = useProductDetails(id);
   const { img, name, description, price, quantity, supplier, status } = product;
+  const handlePlaceOrder = (event) => {
+    event.preventDefault();
+    const userItems = {
+      product: product.name,
+      email: user.email,
+      name: user.displayName,
+      address: event.target.address.value,
+      phone: event.target.phone.value,
+    };
+    axios.post("http://localhost:5000/userItems", userItems).then((res) => {
+      const { data } = res;
+      if (data.insertedId) {
+        alert("Your order is booked");
+        event.target.reset();
+      }
+    });
+  };
+
   return (
     <Container>
       <h2 className="text-primary">Add To My Items</h2>
@@ -36,22 +58,59 @@ const UserItems = () => {
           </h6>
         </Col>
       </Row>
-      <form className="my-5">
-        <input type="email" className="mb-2" placeholder="email" required />
+      <form onSubmit={handlePlaceOrder} className="my-5">
+        <input
+          type="text"
+          className="mb-2"
+          name="serviceName"
+          value={product.name}
+          placeholder="Service Name"
+          required
+          readOnly
+          disabled
+        />
         <br />
-        <input type="text" className="mb-2" placeholder="Name" required />
-        <br />
-        <input type="text" className="mb-2" placeholder="Phone" required />
-        <br />
-        <input type="text" className="mb-2" placeholder="Address" required />
+        <input
+          type="email"
+          className="mb-2"
+          name="email"
+          value={user?.email}
+          placeholder="Email"
+          required
+          readOnly
+          disabled
+        />
         <br />
         <input
           type="text"
           className="mb-2"
-          placeholder="Service Name"
+          name="userName"
+          value={user?.displayName}
+          placeholder="Name"
+          required
+          readOnly
+          disabled
+        />
+        <br />
+        <input
+          type="text"
+          className="mb-2"
+          name="phone"
+          placeholder="Phone"
+          autoComplete="off"
           required
         />
         <br />
+        <input
+          type="text"
+          className="mb-2"
+          name="address"
+          placeholder="Address"
+          autoComplete="off"
+          required
+        />
+        <br />
+
         <button className="btn btn-primary" type="submit">
           Add to My Items
         </button>

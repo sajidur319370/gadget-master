@@ -38,7 +38,7 @@ const Inventory = () => {
         </Col>
       </Row>
 
-      <Button variant="primary" className="m-2">
+      <Button variant="danger" className="m-2">
         Delevered
       </Button>
 
@@ -47,13 +47,13 @@ const Inventory = () => {
           <Form.Control type="number" placeholder="Increase Quantity" />
         </Form.Group>
         <br />
-        <Button variant="primary" type="submit">
+        <Button variant="success" type="submit">
           Restock The Item
         </Button>
       </Form>
       <Link
         to="/inventory"
-        className="text-decoration-none my-5 btn btn-primary"
+        className="text-decoration-none my-5 btn btn-success"
       >
         Manage Inventories
       </Link>

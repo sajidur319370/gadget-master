@@ -70,7 +70,7 @@ const AddItem = () => {
           {...register("status", { required: true, maxLength: 20 })}
         />
         <br />
-        <input type="submit" value="Add" />
+        <input type="submit" value="Add" className="btn btn-success" />
       </form>
     </div>
   );

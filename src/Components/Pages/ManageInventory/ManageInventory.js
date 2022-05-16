@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ManageInventory = () => {
   const [products, setProducts] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(6);
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("http://localhost:5000/productCount")
       .then((res) => res.json())
@@ -43,7 +44,7 @@ const ManageInventory = () => {
   return (
     <Container>
       <h2 className="text-primary my-5">All Products</h2>
-      <Link to="/additem" className="text-decoration-none m-2 btn btn-primary">
+      <Link to="/additem" className="text-decoration-none m-2 btn btn-success">
         Add New Item
       </Link>
       <Row>
@@ -71,14 +72,22 @@ const ManageInventory = () => {
             </div>
             <div className="position-absolute bottom-0 start-50 translate-middle d-flex">
               <Button
-                className="me-2"
-                onClick={() => handleDelete(product._id)}
+                onClick={() => {
+                  navigate(`/inventory/${product._id}`);
+                }}
                 variant="primary"
+              >
+                Update
+              </Button>
+              <Button
+                className="mx-5"
+                onClick={() => handleDelete(product._id)}
+                variant="danger"
               >
                 Delete
               </Button>
               <Link to={`/cart/${product._id}`}>
-                <Button variant="primary">Add to cart</Button>
+                <Button variant="success">AddForMe</Button>
               </Link>
             </div>
           </Col>
@@ -91,8 +100,8 @@ const ManageInventory = () => {
             onClick={() => setPage(number)}
             className={
               page === number
-                ? "btn btn-secondary me-1"
-                : "btn btn-primary me-1"
+                ? "btn btn-primary me-1"
+                : "btn btn-secondary me-1"
             }
           >
             {number + 1}
