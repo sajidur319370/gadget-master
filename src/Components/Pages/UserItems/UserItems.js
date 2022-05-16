@@ -24,13 +24,15 @@ const UserItems = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    axios.post("http://localhost:5000/userItems", userItems).then((res) => {
-      const { data } = res;
-      if (data.insertedId) {
-        alert("Your order is booked");
-        event.target.reset();
-      }
-    });
+    axios
+      .post("https://pure-mountain-40719.herokuapp.com/userItems", userItems)
+      .then((res) => {
+        const { data } = res;
+        if (data.insertedId) {
+          alert("Your order is booked");
+          event.target.reset();
+        }
+      });
   };
 
   return (

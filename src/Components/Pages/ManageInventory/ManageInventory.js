@@ -9,7 +9,7 @@ const ManageInventory = () => {
   const [size, setSize] = useState(6);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/productCount")
+    fetch("https://pure-mountain-40719.herokuapp.com/productCount")
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
@@ -20,7 +20,9 @@ const ManageInventory = () => {
 
   //===========load 6 items in one page==============
   useEffect(() => {
-    fetch(`http://localhost:5000/inventory?page=${page}&size=${size}`)
+    fetch(
+      `https://pure-mountain-40719.herokuapp.com/inventory?page=${page}&size=${size}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [page, size]);
@@ -28,7 +30,7 @@ const ManageInventory = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete this item?");
     if (proceed) {
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://pure-mountain-40719.herokuapp.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })

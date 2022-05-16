@@ -14,7 +14,7 @@ const MyItems = () => {
   useEffect(() => {
     const getUserItems = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/userItems?email=${email}`;
+      const url = `https://pure-mountain-40719.herokuapp.com/userItems?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setUserItems(data);
@@ -32,7 +32,7 @@ const MyItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete this item?");
     if (proceed) {
-      const url = `http://localhost:5000/userItems/${id}`;
+      const url = `https://pure-mountain-40719.herokuapp.com/userItems/${id}`;
       fetch(url, {
         method: "DELETE",
       })
