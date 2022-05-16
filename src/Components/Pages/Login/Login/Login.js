@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
@@ -7,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../../firebase.init";
+import useToken from "../../../../hooks/useToken";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
@@ -23,25 +23,16 @@ const Login = () => {
     const password = passwordRef.current.value;
 
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post(
-      "https://pure-mountain-40719.herokuapp.com/login",
-      {
-        email,
-      }
-    );
-    localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
   };
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
-
-  if (user) {
+  const [token] = useToken(user);
+  if (token) {
     emailRef.current.value = "";
     passwordRef.current.value = "";
-    // navigate(from, { replace: true });
-    console.log(user);
+    navigate(from, { replace: true });
   }
 
   const resetPassword = async () => {

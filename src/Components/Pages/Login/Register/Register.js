@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../../firebase.init";
+import useToken from "../../../../hooks/useToken";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
@@ -41,7 +42,8 @@ const Register = () => {
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
-  if (user) {
+  const [token] = useToken(user);
+  if (token) {
     nameRef.current.value = "";
     emailRef.current.value = "";
     passwordRef.current.value = "";

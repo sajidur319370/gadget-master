@@ -4,19 +4,23 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import googleIcon from "../SocialLogin/SocialIcon/google.png";
 import { Button } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
+import useToken from "../../../../hooks/useToken";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
+  const [token] = useToken(user);
   const handleGoogleSignIn = () => {
     signInWithGoogle();
   };
+
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
+
   return (
     <div>
       <p className="text-danger">{error && error.message}</p>

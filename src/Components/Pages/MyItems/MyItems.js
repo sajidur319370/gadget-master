@@ -22,6 +22,7 @@ const MyItems = () => {
         console.log(error);
         if (error.response.status === 401 || error.response.status === 403) {
           signOut(auth);
+          console.log(email);
           navigate("/login");
         }
       }
