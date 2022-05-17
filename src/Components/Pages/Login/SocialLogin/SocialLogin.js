@@ -9,8 +9,8 @@ import useToken from "../../../../hooks/useToken";
 const SocialLogin = () => {
   const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
   const [token] = useToken(user);
-  const handleGoogleSignIn = () => {
-    signInWithGoogle();
+  const handleGoogleSignIn = async () => {
+    await signInWithGoogle();
   };
 
   const navigate = useNavigate();

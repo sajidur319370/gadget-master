@@ -83,6 +83,11 @@ const Inventory = () => {
         </Col>
       </Row>
 
+      <h6 className="text-danger">
+        {" "}
+        NB:Net Problem issue can slower the update quantity function work
+      </h6>
+
       <Button
         onClick={() => handleDeliverUpdate(quantity)}
         variant="danger"
