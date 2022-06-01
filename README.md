@@ -18,4 +18,4 @@ In the project I Use
 
 ### `React Hook Form`
 
-### `Axios`
+### `Axios for request and response`
