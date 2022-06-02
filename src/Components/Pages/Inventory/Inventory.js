@@ -14,7 +14,7 @@ const Inventory = () => {
     const updateProduct = { updateQuantity };
 
     // send data to server
-    const url = `http://localhost:5000/inventoryUpdate/${id}`;
+    const url = `https://pure-mountain-40719.herokuapp.com/inventoryUpdate/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -33,17 +33,17 @@ const Inventory = () => {
   };
 
   const handleDeliverUpdate = (quantity) => {
-    const updateQuantity = quantity - 1;
-    const updateProduct = { updateQuantity };
+    const deleverQuantity = quantity - 1;
+    const deleverProduct = { deleverQuantity };
 
     // send data to server
-    const url = `http://localhost:5000/inventoryDelever/${id}`;
+    const url = `https://pure-mountain-40719.herokuapp.com/inventoryDelever/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(updateProduct),
+      body: JSON.stringify(deleverProduct),
     })
       .then((res) => res.json())
       .then((result) => {
