@@ -14,7 +14,7 @@ const Inventory = () => {
     const updateProduct = { updateQuantity };
 
     // send data to server
-    const url = `https://pure-mountain-40719.herokuapp.com/inventory/${id}`;
+    const url = `http://localhost:5000/inventoryUpdate/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -37,7 +37,7 @@ const Inventory = () => {
     const updateProduct = { updateQuantity };
 
     // send data to server
-    const url = `https://pure-mountain-40719.herokuapp.com/inventory/${id}`;
+    const url = `http://localhost:5000/inventoryDelever/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -82,11 +82,6 @@ const Inventory = () => {
           </h6>
         </Col>
       </Row>
-
-      <h6 className="text-danger">
-        {" "}
-        NB:Net Problem issue can slower the update quantity function work
-      </h6>
 
       <Button
         onClick={() => handleDeliverUpdate(quantity)}
